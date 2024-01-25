@@ -7,10 +7,10 @@ export default function ResultsPage() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center space-y-4">
             <h1 className="text-6xl font-black sm:text-8xl bg-[#FF6347] text-center px-5 rounded-md text-white">SPLS</h1>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#FF4500] dark:text-[#FF4500]">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-[#FF4500]">
               Synthetic Positive Lethargic Sounds
             </h2>
-            <p className="max-w-[600px] text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-300 text-center">
+            <p className="max-w-[600px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed text-center">
               This personality type is characterized by a love for synthetic sounds, a positive outlook, a tendency
               towards slower tempos, and a preference for complex soundscapes. You likely enjoy electronic music,
               ambient soundscapes, and anything that pushes the boundaries of traditional music.
@@ -19,11 +19,11 @@ export default function ResultsPage() {
         </div>
       </section>
       <section className="container px-4 md:px-6 py-12 md:py-24 lg:py-32">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-[#FF4500] dark:text-[#FF4500]">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8 text-white">
           Explore the Other Personalities
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4">
-          <Link className="bg-[#FF6347] dark:bg-[#FF6347] p-4 rounded-lg" href="#">
+          <Link className="bg-[#FF6347] p-4 rounded-lg" href="#">
             <h3 className="text-white font-black">SNLW</h3>
           </Link>
           <Link className="bg-[#FF4500] p-4 rounded-lg" href="#">
