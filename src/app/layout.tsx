@@ -33,9 +33,9 @@ export default function RootLayout({
                 find your type
               </Link> 
               &bull;
-              <a className="underline cursor-pointer hover:text-red-200">
+              <Link href="/the-types" className="underline cursor-pointer hover:text-red-200">
                 read about the types
-              </a>
+              </Link>
             </div>
           </header>
           <main className="w-full">
