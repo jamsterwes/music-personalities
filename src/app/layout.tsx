@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={GeistSans.className + " bg-black"}>
-        <div className="grid grid-rows-[auto_1fr_1.5em] h-full w-full justify-center items-start">
+        <div className="grid grid-rows-[auto_1fr_1.5em] h-full w-screen justify-center items-start">
           <header className="mb-12 flex flex-col items-center pt-4">
             <Link href="/">
               <h1 className="text-white text-7xl font-black mb-2">
@@ -38,7 +38,7 @@ export default function RootLayout({
               </Link>
             </div>
           </header>
-          <main className="w-full">
+          <main className="w-screen">
             {children}
           </main>
           <div className="flex text-sm justify-center items-center font-medium text-white h-full">
