@@ -1,20 +1,24 @@
-import Image from "next/image";
-
 export async function Song({ songID, token }: { songID: string, token: string }) {
   // Get the link to the track's album art
-  // TODO: songID
-  const songID_temp = "0LqhbUfmHsxovfSirhEIGu";
-  const albumArtLink = await fetch(`https://api.spotify.com/v1/tracks/${songID_temp}`, {
+  const res = await fetch(`https://api.spotify.com/v1/tracks/${songID}`, {
     headers: {
       "Authorization": `Bearer ${token}`,
     }
-  })
-    .then((res) => res.json())
-    .then((data) => data.album.images[0].url);
+  });
+  
+  const data = await res.json();
+
+  const albumArtLink = data.album.images[0].url;
+
   
   return (
-    <div className="grid grid-cols-3">
-      <Image src={albumArtLink} alt="Album Art" width={64} height={64} />
+    <div className="grid grid-cols-3 items-center h-48 border-b-2">
+      <img src={albumArtLink} alt="Album Art" className="p-4 h-48 w-auto" />
+      <div className="col-span-2 grid grid-rows-3">
+        <span>Night Shift</span>
+        <span>Lucy Dacus</span>
+        <span>Historian</span>
+      </div>
     </div>
   );
 }

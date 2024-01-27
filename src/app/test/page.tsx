@@ -2,18 +2,20 @@ import { Rainbow } from "@/components/Rainbow";
 import { SongList } from "@/components/SongList/SongList";
 
 export default async function TestPage() {
+
   // Get a spotify token
-  const token = await fetch('https://accounts.spotify.com/api/token', {
+  const res = await fetch('https://accounts.spotify.com/api/token?grant_type=client_credentials', {
     method: 'POST',
     headers: {
-      'Authorization': 'Basic ' + btoa(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET)
-    },
-    body: JSON.stringify({
-      grant_type: 'client_credentials'
-    })
-  })
-    .then((res) => res.json())
-    .then((data) => data.access_token);
+      'Accept': 'application/json',
+      'Authorization': 'Basic ' + btoa(process.env.SPOTIFY_CLIENT_ID + ':' + process.env.SPOTIFY_CLIENT_SECRET),
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
+  });
+
+  const data = await res.json();
+
+  const token = data.access_token;
 
   return (
     <div className="flex flex-col items-center w-full">
