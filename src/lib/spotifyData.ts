@@ -15,6 +15,5 @@ export interface SpotifyAudioFeatures {
   acousticness: number,
   valence: number,
   energy: number,
-  instrumentalness: number,
-  id: string
+  instrumentalness: number
 }
