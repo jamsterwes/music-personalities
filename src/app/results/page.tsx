@@ -134,10 +134,10 @@ async function getPersonalityType(trackIDs_string: string) {
   console.log({finalFeatures});
 
   // Take aggregate features and calculate personality
-  let featureID = Math.round(finalFeatures.instrumentalness)
-    + 2 * Math.round(finalFeatures.energy)
-    + 4 * Math.round(finalFeatures.valence)
-    + 8 * Math.round(finalFeatures.acousticness);
+  let featureID = Math.round(finalFeatures.instrumentalness + 0.1)
+    + 2 * Math.round(finalFeatures.energy - 0.1)
+    + 4 * (1 - Math.round(finalFeatures.valence - 0.1))
+    + 8 * Math.min(1, Math.round(finalFeatures.acousticness * 2));
 
   const personalityMap = [
     "SPLW", // 0000
