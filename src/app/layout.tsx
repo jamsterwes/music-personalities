@@ -29,7 +29,7 @@ export default function RootLayout({
               </p>
             </Link>
             <div className="flex text-lg justify-around font-light gap-2 text-white">
-              <Link href="/test" className="underline cursor-pointer hover:text-red-200">
+              <Link href="/quiz" className="underline cursor-pointer hover:text-red-200">
                 find your type
               </Link> 
               &bull;
