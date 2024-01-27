@@ -7,6 +7,11 @@ export const metadata: Metadata = {
   description: "Made with love by Wes Taylor <3",
 };
 
+// Function to generate the link to authorize with Spotify
+function getSpotifyAuthLink() {
+  
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
