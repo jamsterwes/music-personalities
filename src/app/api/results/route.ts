@@ -79,5 +79,7 @@ export async function GET(request: Request) {
     "ANES", // 1111
   ];
 
-  return personalityMap[featureID];
+  return Response.json({
+    personalityType: personalityMap[featureID]
+  });
 }
