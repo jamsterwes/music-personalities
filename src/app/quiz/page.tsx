@@ -20,7 +20,7 @@ export default function QuizPage() {
   const [songIDs, setSongIDs] = useState<string[]>([]);
 
   const nextQuestion = () => {
-    if (questionID >= 4) router.push("/results") // TODO: load the song IDs
+    if (questionID >= 4) router.push("/results?trackIDs=" + encodeURIComponent(songIDs.join(","))) // TODO: load the song IDs
     else setQuestionID(questionID + 1);
   }
 
