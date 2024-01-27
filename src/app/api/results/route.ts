@@ -1,8 +1,8 @@
-import { SpotifyTrack } from "@/lib/spotifyData";
+import { SpotifyAudioFeatures, SpotifyTrack } from "@/lib/spotifyData";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get('query') || '';
+  const trackID = searchParams.get('trackID') || '';
 
   // Get a spotify token
   const tokenRes = await fetch('https://accounts.spotify.com/api/token?grant_type=client_credentials', {
@@ -15,28 +15,14 @@ export async function GET(request: Request) {
   });
   const tokenData = await tokenRes.json();
   const token = tokenData.access_token;
-
-  // Perform search
-  const reqParams = new URLSearchParams();
-  reqParams.set('query', query);
-  reqParams.set('type', 'track');
-  reqParams.set('locale', 'en-US,en;q=0.9');
-  reqParams.set('offset', '0');
-  reqParams.set('limit', '4');
   
-  const searchReq = await fetch(`https://api.spotify.com/v1/search?${reqParams.toString()}`, {
+  const featuresReq = await fetch(`https://api.spotify.com/v1/audio-features/${trackID}`, {
     headers: {
       'Authorization': `Bearer ${token}`
     }
   });
 
-  const searchData = await searchReq.json() as {
-    tracks: {
-      items: SpotifyTrack[]
-    }
-  };
+  const featuresData = await featuresReq.json() as SpotifyAudioFeatures;
 
-  return Response.json({
-    tracks: searchData.tracks.items
-  });
+  return Response.json(featuresData);
 }
