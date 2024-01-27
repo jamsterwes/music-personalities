@@ -17,18 +17,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={GeistSans.className + " bg-black"}>
         <div className="grid grid-rows-[auto_1fr_1.5em] h-full w-screen justify-center items-start">
-          <header className="mb-12 flex flex-col items-center pt-4">
+          <header className="mb-4 sm:mb-12 flex flex-col items-center pt-4">
             <Link href="/">
-              <h1 className="text-white text-7xl font-black mb-2">
+              <h1 className="text-white text-5xl sm:text-7xl font-black mb-2">
                 mtti
               </h1>
             </Link>
             <Link href="/">
-              <p className="text-black bg-red-500 text-2xl font-bold px-2 mb-1">
+              <p className="text-black bg-red-500 text-lg sm:text-2xl font-bold px-2 mb-1">
                 music taste type indicator
               </p>
             </Link>
-            <div className="flex text-lg justify-around font-light gap-2 text-white">
+            <div className="flex text-md sm:text-lg justify-around font-light gap-2 text-white">
               <Link href="/quiz" className="underline cursor-pointer hover:text-red-200 active:text-red-300">
                 find your type
               </Link> 

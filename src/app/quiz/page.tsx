@@ -35,7 +35,7 @@ export default function QuizPage() {
   return (
     <div className="flex flex-col items-center">
       <Rainbow>find your type</Rainbow>
-      <h2 className="text-4xl text-white font-bold mb-6">{questions[questionID]}</h2>
+      <h2 className="text-2xl text-center sm:text-4xl text-white font-bold mb-3 sm:mb-6">{questions[questionID]}</h2>
       <SongSearch onSelect={selectSong} />
     </div>
   )
